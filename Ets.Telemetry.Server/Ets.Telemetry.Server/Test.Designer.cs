@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            PolyMonControls.RadialGauge.NeedleType needleType1 = new PolyMonControls.RadialGauge.NeedleType();
-            PolyMonControls.RadialGauge.NeedleType needleType2 = new PolyMonControls.RadialGauge.NeedleType();
+            PolyMonControls.RadialGauge.NeedleType needleType5 = new PolyMonControls.RadialGauge.NeedleType();
+            PolyMonControls.RadialGauge.NeedleType needleType6 = new PolyMonControls.RadialGauge.NeedleType();
             this.statusUpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.statsUpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -40,6 +40,7 @@
             this.indicatorLeft = new PolyMonControls.StatusLight();
             this.indicatorRight = new PolyMonControls.StatusLight();
             this.fuelGuage = new PolyMonControls.MultiBarGauge();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,9 +82,9 @@
             this.radialGauge1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.radialGauge1.Location = new System.Drawing.Point(12, 12);
             this.radialGauge1.Name = "radialGauge1";
-            needleType1.Color = System.Drawing.Color.Blue;
-            needleType1.Thickness = 5F;
-            this.radialGauge1.Needle = needleType1;
+            needleType5.Color = System.Drawing.Color.Blue;
+            needleType5.Thickness = 5F;
+            this.radialGauge1.Needle = needleType5;
             this.radialGauge1.RangeEnd = 150D;
             this.radialGauge1.Size = new System.Drawing.Size(200, 200);
             this.radialGauge1.TabIndex = 8;
@@ -96,9 +97,9 @@
             this.radialGauge2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.radialGauge2.Location = new System.Drawing.Point(529, 12);
             this.radialGauge2.Name = "radialGauge2";
-            needleType2.Color = System.Drawing.Color.Blue;
-            needleType2.Thickness = 5F;
-            this.radialGauge2.Needle = needleType2;
+            needleType6.Color = System.Drawing.Color.Blue;
+            needleType6.Thickness = 5F;
+            this.radialGauge2.Needle = needleType6;
             this.radialGauge2.RangeEnd = 25D;
             this.radialGauge2.Size = new System.Drawing.Size(200, 200);
             this.radialGauge2.TabIndex = 9;
@@ -146,12 +147,21 @@
             this.fuelGuage.Size = new System.Drawing.Size(200, 26);
             this.fuelGuage.TabIndex = 12;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(218, 44);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(305, 21);
+            this.comboBox1.TabIndex = 13;
+            // 
             // Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(741, 364);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.fuelGuage);
             this.Controls.Add(this.indicatorRight);
             this.Controls.Add(this.indicatorLeft);
@@ -178,5 +188,6 @@
         private PolyMonControls.StatusLight indicatorLeft;
         private PolyMonControls.StatusLight indicatorRight;
         private PolyMonControls.MultiBarGauge fuelGuage;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

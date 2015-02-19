@@ -10,12 +10,15 @@ using System.Windows.Forms;
 using Funbit.Ets.Telemetry.Server;
 using Funbit.Ets.Telemetry.Server.Data;
 using Funbit.Ets.Telemetry.Server.Helpers;
+using System.IO.Ports;
 
 
 namespace Ets.Telemetry.Server
 {
     public partial class Test : Form
     {
+        static SerialPort _serialPort;
+
         public Test()
         {
             InitializeComponent();
@@ -39,6 +42,15 @@ namespace Ets.Telemetry.Server
 
             fuelGuage.Background.BackColor1 = Color.FromArgb(64, 64, 64);
             fuelGuage.Background.FillStyle = PolyMonControls.MultiBarGauge.BackgroundType.FillStyles.Solid;
+
+
+            //serial port tests
+            _serialPort = new SerialPort();
+            string[] ports = SerialPort.GetPortNames();
+            foreach(string port in ports){
+                comboBox1.Items.Add(port);
+            }
+            
         }
 
         private void statusUpdateTimer_Tick(object sender, EventArgs e)
