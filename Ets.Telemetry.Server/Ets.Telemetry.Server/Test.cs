@@ -48,13 +48,12 @@ namespace Ets.Telemetry.Server
             
             if(truckSpeed < 0){
                 speedIndicator.Text = truckSpeed.ToString();
-                speedIndicator.ForeColor = Color.FromArgb(240, 55, 30);
+                speedIndicator.ForeColor = Color.Black;
             }else{
                 speedIndicator.Text = truckSpeed.ToString();
                 speedIndicator.ForeColor = Color.DarkGreen;
             }
-            
-            
+
             RPMIndicator.Text = truckRpm.ToString();
         }
     }
