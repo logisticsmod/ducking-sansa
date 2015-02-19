@@ -39,6 +39,7 @@
             this.RPMIndicator = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ccIndicator = new System.Windows.Forms.Label();
+            this.radialGauge1 = new PolyMonControls.RadialGauge();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,11 +124,21 @@
             this.ccIndicator.TabIndex = 7;
             this.ccIndicator.Text = "label1";
             // 
+            // radialGauge1
+            // 
+            this.radialGauge1.BackgroundImage = System.Drawing.Color.Empty;
+            this.radialGauge1.BackgroundImageLayout = System.Drawing.Color.Empty;
+            this.radialGauge1.Location = new System.Drawing.Point(320, 71);
+            this.radialGauge1.Name = "radialGauge1";
+            this.radialGauge1.Size = new System.Drawing.Size(200, 200);
+            this.radialGauge1.TabIndex = 8;
+            // 
             // Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(741, 364);
+            this.Controls.Add(this.radialGauge1);
             this.Controls.Add(this.ccIndicator);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.RPMIndicator);
@@ -156,5 +167,6 @@
         private System.Windows.Forms.Label RPMIndicator;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label ccIndicator;
+        private PolyMonControls.RadialGauge radialGauge1;
     }
 }

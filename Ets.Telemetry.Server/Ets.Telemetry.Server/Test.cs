@@ -49,6 +49,8 @@ namespace Ets.Telemetry.Server
                 speedIndicator.ForeColor = Color.DarkGreen;
             }
 
+            radialGauge1.Value = data.TruckSpeed;
+
             RPMIndicator.Text = truckRpm.ToString();
 
             if(data.CruiseControlOn){
