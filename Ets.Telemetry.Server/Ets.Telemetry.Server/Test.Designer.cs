@@ -37,6 +37,8 @@
             this.speedLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.RPMIndicator = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ccIndicator = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +50,7 @@
             // speedIndicator
             // 
             this.speedIndicator.AutoSize = true;
-            this.speedIndicator.Location = new System.Drawing.Point(53, 9);
+            this.speedIndicator.Location = new System.Drawing.Point(96, 9);
             this.speedIndicator.Name = "speedIndicator";
             this.speedIndicator.Size = new System.Drawing.Size(35, 13);
             this.speedIndicator.TabIndex = 1;
@@ -64,9 +66,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 239);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 342);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(284, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(741, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -97,17 +99,37 @@
             // RPMIndicator
             // 
             this.RPMIndicator.AutoSize = true;
-            this.RPMIndicator.Location = new System.Drawing.Point(52, 31);
+            this.RPMIndicator.Location = new System.Drawing.Point(96, 31);
             this.RPMIndicator.Name = "RPMIndicator";
             this.RPMIndicator.Size = new System.Drawing.Size(35, 13);
             this.RPMIndicator.TabIndex = 5;
             this.RPMIndicator.Text = "label1";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Cruise Control: ";
+            // 
+            // ccIndicator
+            // 
+            this.ccIndicator.AutoSize = true;
+            this.ccIndicator.Location = new System.Drawing.Point(96, 53);
+            this.ccIndicator.Name = "ccIndicator";
+            this.ccIndicator.Size = new System.Drawing.Size(35, 13);
+            this.ccIndicator.TabIndex = 7;
+            this.ccIndicator.Text = "label1";
+            // 
             // Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(741, 364);
+            this.Controls.Add(this.ccIndicator);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.RPMIndicator);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.speedLabel);
@@ -115,7 +137,6 @@
             this.Controls.Add(this.speedIndicator);
             this.Name = "Test";
             this.Text = "Logistics Mod Server";
-            this.Load += new System.EventHandler(this.Test_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -133,5 +154,7 @@
         private System.Windows.Forms.Label speedLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label RPMIndicator;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label ccIndicator;
     }
 }

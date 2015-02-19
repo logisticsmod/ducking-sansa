@@ -21,11 +21,6 @@ namespace Ets.Telemetry.Server
             InitializeComponent();
         }
 
-        private void Test_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void statusUpdateTimer_Tick(object sender, EventArgs e)
         {
             if (Ets2ProcessHelper.IsEts2Running)
@@ -55,6 +50,16 @@ namespace Ets.Telemetry.Server
             }
 
             RPMIndicator.Text = truckRpm.ToString();
+
+            if(data.CruiseControlOn){
+                ccIndicator.Text = "On";
+                ccIndicator.ForeColor = Color.DarkGreen;
+            }
+            else
+            {
+                ccIndicator.Text = "Off";
+                ccIndicator.ForeColor = Color.FromArgb(240, 55, 30);
+            }
         }
     }
 }
