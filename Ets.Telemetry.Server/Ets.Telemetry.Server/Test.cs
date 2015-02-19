@@ -84,6 +84,9 @@ namespace Ets.Telemetry.Server
 
             this.fuelGuage.BarValues = new double[] {Convert.ToInt32((data.Fuel/data.FuelCapacity) * 100)};
 
+            var send = Convert.ToInt32(data.TruckSpeed);
+            _serialPort.WriteLine(String.Format(send.ToString()));
+
             radialGauge1.Value = data.TruckSpeed;
             radialGauge2.Value = data.EngineRpm / 100;
             if (data.BlinkerLeftOn)
@@ -124,13 +127,6 @@ namespace Ets.Telemetry.Server
             _serialPort.Close();
             _serialPort.PortName = comboBox1.SelectedItem.ToString();
             _serialPort.Open();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int send = 12;
-
-            _serialPort.WriteLine(String.Format(send.ToString()));
         }
 
     }

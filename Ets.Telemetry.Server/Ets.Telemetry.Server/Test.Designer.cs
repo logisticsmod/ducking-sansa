@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            PolyMonControls.RadialGauge.NeedleType needleType9 = new PolyMonControls.RadialGauge.NeedleType();
-            PolyMonControls.RadialGauge.NeedleType needleType10 = new PolyMonControls.RadialGauge.NeedleType();
+            PolyMonControls.RadialGauge.NeedleType needleType1 = new PolyMonControls.RadialGauge.NeedleType();
+            PolyMonControls.RadialGauge.NeedleType needleType2 = new PolyMonControls.RadialGauge.NeedleType();
             this.statusUpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.statsUpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -41,7 +41,6 @@
             this.indicatorRight = new PolyMonControls.StatusLight();
             this.fuelGuage = new PolyMonControls.MultiBarGauge();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,9 +82,9 @@
             this.radialGauge1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.radialGauge1.Location = new System.Drawing.Point(12, 12);
             this.radialGauge1.Name = "radialGauge1";
-            needleType9.Color = System.Drawing.Color.Blue;
-            needleType9.Thickness = 5F;
-            this.radialGauge1.Needle = needleType9;
+            needleType1.Color = System.Drawing.Color.Blue;
+            needleType1.Thickness = 5F;
+            this.radialGauge1.Needle = needleType1;
             this.radialGauge1.RangeEnd = 150D;
             this.radialGauge1.Size = new System.Drawing.Size(200, 200);
             this.radialGauge1.TabIndex = 8;
@@ -98,9 +97,9 @@
             this.radialGauge2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.radialGauge2.Location = new System.Drawing.Point(529, 12);
             this.radialGauge2.Name = "radialGauge2";
-            needleType10.Color = System.Drawing.Color.Blue;
-            needleType10.Thickness = 5F;
-            this.radialGauge2.Needle = needleType10;
+            needleType2.Color = System.Drawing.Color.Blue;
+            needleType2.Thickness = 5F;
+            this.radialGauge2.Needle = needleType2;
             this.radialGauge2.RangeEnd = 25D;
             this.radialGauge2.Size = new System.Drawing.Size(200, 200);
             this.radialGauge2.TabIndex = 9;
@@ -157,23 +156,12 @@
             this.comboBox1.TabIndex = 13;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(218, 72);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(305, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Send";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(741, 364);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.fuelGuage);
             this.Controls.Add(this.indicatorRight);
@@ -202,6 +190,5 @@
         private PolyMonControls.StatusLight indicatorRight;
         private PolyMonControls.MultiBarGauge fuelGuage;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
     }
 }
