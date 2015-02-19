@@ -29,17 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            PolyMonControls.RadialGauge.NeedleType needleType1 = new PolyMonControls.RadialGauge.NeedleType();
+            PolyMonControls.RadialGauge.NeedleType needleType2 = new PolyMonControls.RadialGauge.NeedleType();
             this.statusUpdateTimer = new System.Windows.Forms.Timer(this.components);
-            this.speedIndicator = new System.Windows.Forms.Label();
             this.statsUpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.speedLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.RPMIndicator = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ccIndicator = new System.Windows.Forms.Label();
             this.radialGauge1 = new PolyMonControls.RadialGauge();
+            this.radialGauge2 = new PolyMonControls.RadialGauge();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,15 +44,6 @@
             // 
             this.statusUpdateTimer.Enabled = true;
             this.statusUpdateTimer.Tick += new System.EventHandler(this.statusUpdateTimer_Tick);
-            // 
-            // speedIndicator
-            // 
-            this.speedIndicator.AutoSize = true;
-            this.speedIndicator.Location = new System.Drawing.Point(96, 9);
-            this.speedIndicator.Name = "speedIndicator";
-            this.speedIndicator.Size = new System.Drawing.Size(35, 13);
-            this.speedIndicator.TabIndex = 1;
-            this.speedIndicator.Text = "label1";
             // 
             // statsUpdateTimer
             // 
@@ -75,77 +63,52 @@
             // 
             // statusLabel
             // 
+            this.statusLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.statusLabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.statusLabel.ImageTransparentColor = System.Drawing.Color.White;
             this.statusLabel.Name = "statusLabel";
             this.statusLabel.Size = new System.Drawing.Size(118, 17);
             this.statusLabel.Text = "toolStripStatusLabel1";
-            // 
-            // speedLabel
-            // 
-            this.speedLabel.AutoSize = true;
-            this.speedLabel.Location = new System.Drawing.Point(12, 9);
-            this.speedLabel.Name = "speedLabel";
-            this.speedLabel.Size = new System.Drawing.Size(41, 13);
-            this.speedLabel.TabIndex = 3;
-            this.speedLabel.Text = "Speed:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "RPM:";
-            // 
-            // RPMIndicator
-            // 
-            this.RPMIndicator.AutoSize = true;
-            this.RPMIndicator.Location = new System.Drawing.Point(96, 31);
-            this.RPMIndicator.Name = "RPMIndicator";
-            this.RPMIndicator.Size = new System.Drawing.Size(35, 13);
-            this.RPMIndicator.TabIndex = 5;
-            this.RPMIndicator.Text = "label1";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Cruise Control: ";
-            // 
-            // ccIndicator
-            // 
-            this.ccIndicator.AutoSize = true;
-            this.ccIndicator.Location = new System.Drawing.Point(96, 53);
-            this.ccIndicator.Name = "ccIndicator";
-            this.ccIndicator.Size = new System.Drawing.Size(35, 13);
-            this.ccIndicator.TabIndex = 7;
-            this.ccIndicator.Text = "label1";
             // 
             // radialGauge1
             // 
             this.radialGauge1.BackgroundImage = System.Drawing.Color.Empty;
             this.radialGauge1.BackgroundImageLayout = System.Drawing.Color.Empty;
-            this.radialGauge1.Location = new System.Drawing.Point(320, 71);
+            this.radialGauge1.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radialGauge1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.radialGauge1.Location = new System.Drawing.Point(12, 12);
             this.radialGauge1.Name = "radialGauge1";
+            needleType1.Color = System.Drawing.Color.Blue;
+            needleType1.Thickness = 5F;
+            this.radialGauge1.Needle = needleType1;
+            this.radialGauge1.RangeEnd = 150D;
             this.radialGauge1.Size = new System.Drawing.Size(200, 200);
             this.radialGauge1.TabIndex = 8;
+            // 
+            // radialGauge2
+            // 
+            this.radialGauge2.BackgroundImage = System.Drawing.Color.Empty;
+            this.radialGauge2.BackgroundImageLayout = System.Drawing.Color.Empty;
+            this.radialGauge2.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radialGauge2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.radialGauge2.Location = new System.Drawing.Point(529, 12);
+            this.radialGauge2.Name = "radialGauge2";
+            needleType2.Color = System.Drawing.Color.Blue;
+            needleType2.Thickness = 5F;
+            this.radialGauge2.Needle = needleType2;
+            this.radialGauge2.RangeEnd = 25D;
+            this.radialGauge2.Size = new System.Drawing.Size(200, 200);
+            this.radialGauge2.TabIndex = 9;
             // 
             // Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(741, 364);
+            this.Controls.Add(this.radialGauge2);
             this.Controls.Add(this.radialGauge1);
-            this.Controls.Add(this.ccIndicator);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.RPMIndicator);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.speedLabel);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.speedIndicator);
             this.Name = "Test";
             this.Text = "Logistics Mod Server";
             this.statusStrip1.ResumeLayout(false);
@@ -158,15 +121,10 @@
         #endregion
 
         private System.Windows.Forms.Timer statusUpdateTimer;
-        private System.Windows.Forms.Label speedIndicator;
         private System.Windows.Forms.Timer statsUpdateTimer;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel statusLabel;
-        private System.Windows.Forms.Label speedLabel;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label RPMIndicator;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label ccIndicator;
         private PolyMonControls.RadialGauge radialGauge1;
+        private PolyMonControls.RadialGauge radialGauge2;
     }
 }

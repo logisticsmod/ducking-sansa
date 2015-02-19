@@ -19,6 +19,18 @@ namespace Ets.Telemetry.Server
         public Test()
         {
             InitializeComponent();
+
+            radialGauge1.DialBackground.BackColor1 = Color.FromArgb(60, 60, 60);
+            radialGauge1.DialBackground.BackColor2 = Color.FromArgb(60, 60, 60);
+            radialGauge1.Background.BackColor1 = Color.FromArgb(64, 64, 64);
+            radialGauge1.Background.BackColor2 = Color.FromArgb(64, 64, 64);
+            radialGauge1.ForeColor = Color.FromArgb(244, 244, 244);
+
+            radialGauge2.DialBackground.BackColor1 = Color.FromArgb(60, 60, 60);
+            radialGauge2.DialBackground.BackColor2 = Color.FromArgb(60, 60, 60);
+            radialGauge2.Background.BackColor1 = Color.FromArgb(64, 64, 64);
+            radialGauge2.Background.BackColor2 = Color.FromArgb(64, 64, 64);
+            radialGauge2.ForeColor = Color.FromArgb(244, 244, 244);
         }
 
         private void statusUpdateTimer_Tick(object sender, EventArgs e)
@@ -38,30 +50,11 @@ namespace Ets.Telemetry.Server
         private void statsUpdateTimer_Tick(object sender, EventArgs e)
         {
             var data = Ets2TelemetryDataReader.Instance.Read();
-            var truckSpeed = Convert.ToInt32(data.TruckSpeed);
-            var truckRpm = Convert.ToInt32(data.EngineRpm);
             
-            if(truckSpeed < 0){
-                speedIndicator.Text = truckSpeed.ToString();
-                speedIndicator.ForeColor = Color.Black;
-            }else{
-                speedIndicator.Text = truckSpeed.ToString();
-                speedIndicator.ForeColor = Color.DarkGreen;
-            }
-
             radialGauge1.Value = data.TruckSpeed;
+            radialGauge2.Value = data.EngineRpm / 100;
 
-            RPMIndicator.Text = truckRpm.ToString();
-
-            if(data.CruiseControlOn){
-                ccIndicator.Text = "On";
-                ccIndicator.ForeColor = Color.DarkGreen;
-            }
-            else
-            {
-                ccIndicator.Text = "Off";
-                ccIndicator.ForeColor = Color.FromArgb(240, 55, 30);
-            }
         }
+
     }
 }
