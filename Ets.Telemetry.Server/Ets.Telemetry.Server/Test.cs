@@ -11,6 +11,7 @@ using Funbit.Ets.Telemetry.Server;
 using Funbit.Ets.Telemetry.Server.Data;
 using Funbit.Ets.Telemetry.Server.Helpers;
 using System.IO.Ports;
+using System.Threading;
 
 
 namespace Ets.Telemetry.Server
@@ -18,6 +19,7 @@ namespace Ets.Telemetry.Server
     public partial class Test : Form
     {
         static SerialPort _serialPort;
+        static bool _continue;
 
         public Test()
         {
@@ -50,7 +52,16 @@ namespace Ets.Telemetry.Server
             foreach(string port in ports){
                 comboBox1.Items.Add(port);
             }
+
             
+            _serialPort.BaudRate = 9600;
+            _serialPort.DataBits = 8;
+            _serialPort.StopBits = (StopBits)Enum.Parse(typeof(StopBits), "1", true);
+
+            _serialPort.Open();
+            _continue = true;
+            
+
         }
 
         private void statusUpdateTimer_Tick(object sender, EventArgs e)
@@ -106,6 +117,20 @@ namespace Ets.Telemetry.Server
                 }
 
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _serialPort.Close();
+            _serialPort.PortName = comboBox1.SelectedItem.ToString();
+            _serialPort.Open();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int send = 12;
+
+            _serialPort.WriteLine(String.Format(send.ToString()));
         }
 
     }
