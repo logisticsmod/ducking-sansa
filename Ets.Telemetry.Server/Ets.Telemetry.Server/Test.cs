@@ -31,6 +31,14 @@ namespace Ets.Telemetry.Server
             radialGauge2.Background.BackColor1 = Color.FromArgb(64, 64, 64);
             radialGauge2.Background.BackColor2 = Color.FromArgb(64, 64, 64);
             radialGauge2.ForeColor = Color.FromArgb(244, 244, 244);
+
+            indicatorLeft.ThresholdOn.Value = 1;
+            indicatorRight.ThresholdOn.Value = 1;
+
+            this.fuelGuage.BarColors = new Color[] { Color.FromArgb(0, 0, 0)  };
+
+            fuelGuage.Background.BackColor1 = Color.FromArgb(64, 64, 64);
+            fuelGuage.Background.FillStyle = PolyMonControls.MultiBarGauge.BackgroundType.FillStyles.Solid;
         }
 
         private void statusUpdateTimer_Tick(object sender, EventArgs e)
@@ -50,10 +58,42 @@ namespace Ets.Telemetry.Server
         private void statsUpdateTimer_Tick(object sender, EventArgs e)
         {
             var data = Ets2TelemetryDataReader.Instance.Read();
-            
+
+            this.fuelGuage.BarValues = new double[] {Convert.ToInt32((data.Fuel/data.FuelCapacity) * 100)};
+
             radialGauge1.Value = data.TruckSpeed;
             radialGauge2.Value = data.EngineRpm / 100;
+            if (data.BlinkerLeftOn)
+            {
+                if (indicatorLeft.Value != 1)
+                {
+                    indicatorLeft.Value = 1;
+                }
+            }
+            else
+            {
+                if (indicatorLeft.Value == 1)
+                {
+                    indicatorLeft.Value = 0;
+                }
+                
+            }
 
+            if (data.BlinkerRightOn)
+            {
+                if (indicatorRight.Value != 1)
+                {
+                    indicatorRight.Value = 1;
+                }
+            }
+            else
+            {
+                if (indicatorRight.Value == 1)
+                {
+                    indicatorRight.Value = 0;
+                }
+
+            }
         }
 
     }

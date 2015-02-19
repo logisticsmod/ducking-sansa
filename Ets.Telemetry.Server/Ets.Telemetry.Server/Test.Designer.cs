@@ -37,6 +37,9 @@
             this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.radialGauge1 = new PolyMonControls.RadialGauge();
             this.radialGauge2 = new PolyMonControls.RadialGauge();
+            this.indicatorLeft = new PolyMonControls.StatusLight();
+            this.indicatorRight = new PolyMonControls.StatusLight();
+            this.fuelGuage = new PolyMonControls.MultiBarGauge();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,15 +103,61 @@
             this.radialGauge2.Size = new System.Drawing.Size(200, 200);
             this.radialGauge2.TabIndex = 9;
             // 
+            // indicatorLeft
+            // 
+            this.indicatorLeft.BackgroundImage = System.Drawing.Color.Empty;
+            this.indicatorLeft.BackgroundImageLayout = System.Drawing.Color.Empty;
+            this.indicatorLeft.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.indicatorLeft.Location = new System.Drawing.Point(218, 12);
+            this.indicatorLeft.Name = "indicatorLeft";
+            this.indicatorLeft.Size = new System.Drawing.Size(26, 25);
+            this.indicatorLeft.TabIndex = 10;
+            this.indicatorLeft.Text = "statusLight1";
+            this.indicatorLeft.Value = 0D;
+            // 
+            // indicatorRight
+            // 
+            this.indicatorRight.BackgroundImage = System.Drawing.Color.Empty;
+            this.indicatorRight.BackgroundImageLayout = System.Drawing.Color.Empty;
+            this.indicatorRight.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.indicatorRight.Location = new System.Drawing.Point(497, 12);
+            this.indicatorRight.Name = "indicatorRight";
+            this.indicatorRight.Size = new System.Drawing.Size(26, 25);
+            this.indicatorRight.TabIndex = 11;
+            this.indicatorRight.Text = "statusLight2";
+            this.indicatorRight.Value = 0D;
+            // 
+            // fuelGuage
+            // 
+            this.fuelGuage.BackgroundImage = System.Drawing.Color.Empty;
+            this.fuelGuage.BackgroundImageLayout = System.Drawing.Color.Empty;
+            this.fuelGuage.BarColors = new System.Drawing.Color[] {
+        System.Drawing.Color.Black,
+        System.Drawing.Color.Red,
+        System.Drawing.Color.Goldenrod};
+            this.fuelGuage.BarLabels = new string[] {
+        "Fuel"};
+            this.fuelGuage.BarValues = new double[] {
+        10D};
+            this.fuelGuage.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fuelGuage.ForeColor = System.Drawing.Color.White;
+            this.fuelGuage.Location = new System.Drawing.Point(274, 12);
+            this.fuelGuage.Name = "fuelGuage";
+            this.fuelGuage.Size = new System.Drawing.Size(200, 26);
+            this.fuelGuage.TabIndex = 12;
+            // 
             // Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(741, 364);
-            this.Controls.Add(this.radialGauge2);
+            this.Controls.Add(this.fuelGuage);
+            this.Controls.Add(this.indicatorRight);
+            this.Controls.Add(this.indicatorLeft);
             this.Controls.Add(this.radialGauge1);
             this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.radialGauge2);
             this.Name = "Test";
             this.Text = "Logistics Mod Server";
             this.statusStrip1.ResumeLayout(false);
@@ -126,5 +175,8 @@
         private System.Windows.Forms.ToolStripStatusLabel statusLabel;
         private PolyMonControls.RadialGauge radialGauge1;
         private PolyMonControls.RadialGauge radialGauge2;
+        private PolyMonControls.StatusLight indicatorLeft;
+        private PolyMonControls.StatusLight indicatorRight;
+        private PolyMonControls.MultiBarGauge fuelGuage;
     }
 }
