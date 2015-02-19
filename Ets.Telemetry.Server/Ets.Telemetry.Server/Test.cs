@@ -45,7 +45,16 @@ namespace Ets.Telemetry.Server
             var data = Ets2TelemetryDataReader.Instance.Read();
             var truckSpeed = Convert.ToInt32(data.TruckSpeed);
             var truckRpm = Convert.ToInt32(data.EngineRpm);
-            speedIndicator.Text = truckSpeed.ToString();
+            
+            if(truckSpeed < 0){
+                speedIndicator.Text = truckSpeed.ToString();
+                speedIndicator.ForeColor = Color.FromArgb(240, 55, 30);
+            }else{
+                speedIndicator.Text = truckSpeed.ToString();
+                speedIndicator.ForeColor = Color.DarkGreen;
+            }
+            
+            
             RPMIndicator.Text = truckRpm.ToString();
         }
     }
