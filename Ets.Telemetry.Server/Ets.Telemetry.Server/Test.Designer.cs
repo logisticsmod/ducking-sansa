@@ -41,6 +41,9 @@
             this.indicatorRight = new PolyMonControls.StatusLight();
             this.fuelGuage = new PolyMonControls.MultiBarGauge();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.barGauge1 = new PolyMonControls.BarGauge();
+            this.gearLabel = new System.Windows.Forms.Label();
+            this.gearIndicator = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,7 +81,7 @@
             // 
             this.radialGauge1.BackgroundImage = System.Drawing.Color.Empty;
             this.radialGauge1.BackgroundImageLayout = System.Drawing.Color.Empty;
-            this.radialGauge1.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radialGauge1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radialGauge1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.radialGauge1.Location = new System.Drawing.Point(12, 12);
             this.radialGauge1.Name = "radialGauge1";
@@ -93,7 +96,7 @@
             // 
             this.radialGauge2.BackgroundImage = System.Drawing.Color.Empty;
             this.radialGauge2.BackgroundImageLayout = System.Drawing.Color.Empty;
-            this.radialGauge2.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radialGauge2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radialGauge2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.radialGauge2.Location = new System.Drawing.Point(529, 12);
             this.radialGauge2.Name = "radialGauge2";
@@ -140,7 +143,7 @@
         "Fuel"};
             this.fuelGuage.BarValues = new double[] {
         10D};
-            this.fuelGuage.Font = new System.Drawing.Font("Monospac821 BT", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fuelGuage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fuelGuage.ForeColor = System.Drawing.Color.White;
             this.fuelGuage.Location = new System.Drawing.Point(274, 12);
             this.fuelGuage.Name = "fuelGuage";
@@ -156,12 +159,48 @@
             this.comboBox1.TabIndex = 13;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // barGauge1
+            // 
+            this.barGauge1.BackgroundImage = System.Drawing.Color.Empty;
+            this.barGauge1.BackgroundImageLayout = System.Drawing.Color.Empty;
+            this.barGauge1.Location = new System.Drawing.Point(429, 233);
+            this.barGauge1.Name = "barGauge1";
+            this.barGauge1.Padding = new System.Windows.Forms.Padding(5, 5, 10, 5);
+            this.barGauge1.Size = new System.Drawing.Size(300, 60);
+            this.barGauge1.TabIndex = 14;
+            this.barGauge1.Text = "barGauge1";
+            // 
+            // gearLabel
+            // 
+            this.gearLabel.AutoSize = true;
+            this.gearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gearLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.gearLabel.Location = new System.Drawing.Point(218, 79);
+            this.gearLabel.Name = "gearLabel";
+            this.gearLabel.Size = new System.Drawing.Size(38, 13);
+            this.gearLabel.TabIndex = 15;
+            this.gearLabel.Text = "Gear:";
+            // 
+            // gearIndicator
+            // 
+            this.gearIndicator.AutoSize = true;
+            this.gearIndicator.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gearIndicator.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.gearIndicator.Location = new System.Drawing.Point(262, 79);
+            this.gearIndicator.Name = "gearIndicator";
+            this.gearIndicator.Size = new System.Drawing.Size(38, 13);
+            this.gearIndicator.TabIndex = 16;
+            this.gearIndicator.Text = "Gear:";
+            // 
             // Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(741, 364);
+            this.Controls.Add(this.gearIndicator);
+            this.Controls.Add(this.gearLabel);
+            this.Controls.Add(this.barGauge1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.fuelGuage);
             this.Controls.Add(this.indicatorRight);
@@ -190,5 +229,8 @@
         private PolyMonControls.StatusLight indicatorRight;
         private PolyMonControls.MultiBarGauge fuelGuage;
         private System.Windows.Forms.ComboBox comboBox1;
+        private PolyMonControls.BarGauge barGauge1;
+        private System.Windows.Forms.Label gearLabel;
+        private System.Windows.Forms.Label gearIndicator;
     }
 }

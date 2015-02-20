@@ -25,6 +25,8 @@ namespace Ets.Telemetry.Server
         {
             InitializeComponent();
 
+            Thread readThread = new Thread(Read);
+
             radialGauge1.DialBackground.BackColor1 = Color.FromArgb(60, 60, 60);
             radialGauge1.DialBackground.BackColor2 = Color.FromArgb(60, 60, 60);
             radialGauge1.Background.BackColor1 = Color.FromArgb(64, 64, 64);
@@ -46,6 +48,7 @@ namespace Ets.Telemetry.Server
             fuelGuage.Background.FillStyle = PolyMonControls.MultiBarGauge.BackgroundType.FillStyles.Solid;
 
 
+
             //serial port tests
             _serialPort = new SerialPort();
             string[] ports = SerialPort.GetPortNames();
@@ -60,8 +63,23 @@ namespace Ets.Telemetry.Server
 
             _serialPort.Open();
             _continue = true;
+            readThread.Start();
             
 
+        }
+
+        public static void Read()
+        {
+            while (_continue)
+            {
+                try
+                {
+                    string message = _serialPort.ReadLine();
+                    Console.WriteLine(message);
+                }
+                catch (TimeoutException) { }
+                catch{}
+            }
         }
 
         private void statusUpdateTimer_Tick(object sender, EventArgs e)
@@ -82,10 +100,22 @@ namespace Ets.Telemetry.Server
         {
             var data = Ets2TelemetryDataReader.Instance.Read();
 
-            this.fuelGuage.BarValues = new double[] {Convert.ToInt32((data.Fuel/data.FuelCapacity) * 100)};
+            try
+            {
+                this.fuelGuage.BarValues = new double[] { Convert.ToInt32((data.Fuel / data.FuelCapacity) * 100) };
+            }
+            catch
+            {
+                //log
+            }
+            
+
+            gearIndicator.Text = data.Gear.ToString();
 
             var send = Convert.ToInt32(data.TruckSpeed);
-            _serialPort.WriteLine(String.Format(send.ToString()));
+            byte[] toSend = BitConverter.GetBytes(send);
+            _serialPort.Write(toSend, 0, toSend.Length);
+            Console.WriteLine(send.ToString());
 
             radialGauge1.Value = data.TruckSpeed;
             radialGauge2.Value = data.EngineRpm / 100;
@@ -120,6 +150,8 @@ namespace Ets.Telemetry.Server
                 }
 
             }
+
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
