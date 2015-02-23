@@ -55,7 +55,7 @@
             // statsUpdateTimer
             // 
             this.statsUpdateTimer.Enabled = true;
-            this.statsUpdateTimer.Interval = 50;
+            this.statsUpdateTimer.Interval = 5000;
             this.statsUpdateTimer.Tick += new System.EventHandler(this.statsUpdateTimer_Tick);
             // 
             // statusStrip1
