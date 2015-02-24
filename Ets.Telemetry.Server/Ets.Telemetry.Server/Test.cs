@@ -113,7 +113,7 @@ namespace Ets.Telemetry.Server
             gearIndicator.Text = data.Gear.ToString();
 
             var send = Convert.ToInt32(data.TruckSpeed);
-            byte[] toSend = BitConverter.GetBytes(send.ToString());
+            byte[] toSend = System.Text.Encoding.ASCII.GetBytes (send.ToString());
             _serialPort.Write(toSend, 0, toSend.Length);
             Console.WriteLine(send.ToString());
 
