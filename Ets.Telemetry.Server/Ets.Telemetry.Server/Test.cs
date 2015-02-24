@@ -113,7 +113,8 @@ namespace Ets.Telemetry.Server
             gearIndicator.Text = data.Gear.ToString();
 
             var send = Convert.ToInt32(data.TruckSpeed);
-            _serialPort.WriteLine(send.ToString());
+            byte[] toSend = BitConverter.GetBytes(send);
+            _serialPort.Write(toSend, 0, toSend.Length);
             Console.WriteLine(send.ToString());
 
             radialGauge1.Value = data.TruckSpeed;
