@@ -57,7 +57,7 @@ namespace Ets.Telemetry.Server
             }
 
             
-            _serialPort.BaudRate = 9600;
+            _serialPort.BaudRate = 115200;
             _serialPort.DataBits = 8;
             _serialPort.StopBits = (StopBits)Enum.Parse(typeof(StopBits), "1", true);
 

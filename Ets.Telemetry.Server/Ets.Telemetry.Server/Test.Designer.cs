@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            PolyMonControls.RadialGauge.NeedleType needleType1 = new PolyMonControls.RadialGauge.NeedleType();
-            PolyMonControls.RadialGauge.NeedleType needleType2 = new PolyMonControls.RadialGauge.NeedleType();
+            PolyMonControls.RadialGauge.NeedleType needleType9 = new PolyMonControls.RadialGauge.NeedleType();
+            PolyMonControls.RadialGauge.NeedleType needleType10 = new PolyMonControls.RadialGauge.NeedleType();
             this.statusUpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.statsUpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -55,7 +55,7 @@
             // statsUpdateTimer
             // 
             this.statsUpdateTimer.Enabled = true;
-            this.statsUpdateTimer.Interval = 5000;
+            this.statsUpdateTimer.Interval = 75;
             this.statsUpdateTimer.Tick += new System.EventHandler(this.statsUpdateTimer_Tick);
             // 
             // statusStrip1
@@ -85,9 +85,9 @@
             this.radialGauge1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.radialGauge1.Location = new System.Drawing.Point(12, 12);
             this.radialGauge1.Name = "radialGauge1";
-            needleType1.Color = System.Drawing.Color.Blue;
-            needleType1.Thickness = 5F;
-            this.radialGauge1.Needle = needleType1;
+            needleType9.Color = System.Drawing.Color.Blue;
+            needleType9.Thickness = 5F;
+            this.radialGauge1.Needle = needleType9;
             this.radialGauge1.RangeEnd = 150D;
             this.radialGauge1.Size = new System.Drawing.Size(200, 200);
             this.radialGauge1.TabIndex = 8;
@@ -100,9 +100,9 @@
             this.radialGauge2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.radialGauge2.Location = new System.Drawing.Point(529, 12);
             this.radialGauge2.Name = "radialGauge2";
-            needleType2.Color = System.Drawing.Color.Blue;
-            needleType2.Thickness = 5F;
-            this.radialGauge2.Needle = needleType2;
+            needleType10.Color = System.Drawing.Color.Blue;
+            needleType10.Thickness = 5F;
+            this.radialGauge2.Needle = needleType10;
             this.radialGauge2.RangeEnd = 25D;
             this.radialGauge2.Size = new System.Drawing.Size(200, 200);
             this.radialGauge2.TabIndex = 9;
